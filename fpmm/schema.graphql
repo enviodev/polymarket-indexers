@@ -122,7 +122,7 @@ type FpmmTransaction {
   "Transaction Hash"
   id: ID!
   "Buy or Sell transaction"
-  type: TradeType!
+  type_: TradeType!
   "Timestamp at which transaction occurred"
   timestamp: BigInt!
   "Market which transaction is interacting with"
