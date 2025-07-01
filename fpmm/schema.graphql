@@ -1,0 +1,51 @@
+type ConditionalTokens_ConditionPreparation {
+  id: ID!
+  conditionId: String!
+  oracle: String!
+  questionId: String!
+  outcomeSlotCount: BigInt!
+}
+
+type FixedProductMarketMakerFactory_FPMMBuy {
+  id: ID!
+  buyer: String!
+  investmentAmount: BigInt!
+  feeAmount: BigInt!
+  outcomeIndex: BigInt!
+  outcomeTokensBought: BigInt!
+}
+
+type FixedProductMarketMakerFactory_FPMMFundingAdded {
+  id: ID!
+  funder: String!
+  amountsAdded: [BigInt!]!
+  sharesMinted: BigInt!
+}
+
+type FixedProductMarketMakerFactory_FPMMFundingRemoved {
+  id: ID!
+  funder: String!
+  amountsRemoved: [BigInt!]!
+  collateralRemovedFromFeePool: BigInt!
+  sharesBurnt: BigInt!
+}
+
+type FixedProductMarketMakerFactory_FPMMSell {
+  id: ID!
+  seller: String!
+  returnAmount: BigInt!
+  feeAmount: BigInt!
+  outcomeIndex: BigInt!
+  outcomeTokensSold: BigInt!
+}
+
+type FixedProductMarketMakerFactory_FixedProductMarketMakerCreation {
+  id: ID!
+  creator: String!
+  fixedProductMarketMaker: String!
+  conditionalTokens: String!
+  collateralToken: String!
+  conditionIds: [String!]!
+  fee: BigInt!
+}
+

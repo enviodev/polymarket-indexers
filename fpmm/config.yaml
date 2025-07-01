@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 137
+  start_block: 0
+  contracts:
+  - name: ConditionalTokens
+    address:
+    - 0x4D97DCd97eC945f40cF65F87097ACe5EA0476045
+    handler: src/EventHandlers.ts
+    events:
+    - event: ConditionPreparation(bytes32 indexed conditionId, address indexed oracle, bytes32 indexed questionId, uint256 outcomeSlotCount)
+  - name: FixedProductMarketMakerFactory
+    address:
+    - 0x8B9805A2f595B6705e74F7310829f2d299D21522
+    handler: src/EventHandlers.ts
+    events:
+    - event: FPMMBuy(address indexed buyer, uint256 investmentAmount, uint256 feeAmount, uint256 indexed outcomeIndex, uint256 outcomeTokensBought)
+    - event: FPMMFundingAdded(address indexed funder, uint256[] amountsAdded, uint256 sharesMinted)
+    - event: FPMMFundingRemoved(address indexed funder, uint256[] amountsRemoved, uint256 collateralRemovedFromFeePool, uint256 sharesBurnt)
+    - event: FPMMSell(address indexed seller, uint256 returnAmount, uint256 feeAmount, uint256 indexed outcomeIndex, uint256 outcomeTokensSold)
+    - event: FixedProductMarketMakerCreation(address indexed creator, address fixedProductMarketMaker, address indexed conditionalTokens, address indexed collateralToken, bytes32[] conditionIds, uint256 fee)
+unordered_multichain_mode: true
