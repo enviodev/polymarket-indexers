@@ -77,7 +77,7 @@ type FixedProductMarketMaker {
   totalSupply: BigInt!
 
   "Addresses which are supplying liquidity to the market maker"
-  poolMembers: [FpmmPoolMembership!] @derivedFrom(field: "pool")
+  poolMembers: [FpmmPoolMembership!]! @derivedFrom(field: "pool")
 }
 
 type FpmmFundingAddition {
