@@ -4,6 +4,7 @@ import {
 } from "generated";
 
 import "./ConditionalTokensMapping";
+import "./FixedProductMarketMakerFactoryMapping";
 
 FixedProductMarketMakerFactory.FPMMBuy.handler(async ({ event, context }) => { });
 
@@ -13,4 +14,4 @@ FixedProductMarketMakerFactory.FPMMFundingRemoved.handler(async ({ event, contex
 
 FixedProductMarketMakerFactory.FPMMSell.handler(async ({ event, context }) => { });
 
-FixedProductMarketMakerFactory.FixedProductMarketMakerCreation.handler(async ({ event, context }) => { });
+
