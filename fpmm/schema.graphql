@@ -1,9 +1,9 @@
-type Condition @entity {
+type Condition {
   "conditionId"
   id: ID!
 }
 
-type Collateral @entity {
+type Collateral {
   "Token address"
   id: ID!
   name: String!
@@ -11,7 +11,7 @@ type Collateral @entity {
   decimals: Int!
 }
 
-type FixedProductMarketMaker @entity {
+type FixedProductMarketMaker {
   "Market maker address"
   id: ID!
 
@@ -80,9 +80,7 @@ type FixedProductMarketMaker @entity {
   poolMembers: [FpmmPoolMembership!] @derivedFrom(field: "pool")
 }
 
-
-
-type FpmmFundingAddition @entity {
+type FpmmFundingAddition {
   "Transaction Hash"
   id: ID!
   "Timestamp at which funding addition occurred"
@@ -99,7 +97,7 @@ type FpmmFundingAddition @entity {
   sharesMinted: BigInt!
 }
 
-type FpmmFundingRemoval @entity {
+type FpmmFundingRemoval {
   "Transaction Hash"
   id: ID!
   "Timestamp at which funding removal occurred"
@@ -120,7 +118,7 @@ enum TradeType {
   Sell
 }
 
-type FpmmTransaction @entity {
+type FpmmTransaction {
   "Transaction Hash"
   id: ID!
   "Buy or Sell transaction"
@@ -141,7 +139,7 @@ type FpmmTransaction @entity {
   outcomeTokensAmount: BigInt!
 }
 
-type FpmmPoolMembership @entity {
+type FpmmPoolMembership {
   "funder address + pool address"
   id: ID!
   "Market to which funder is providing funding"
