@@ -3,7 +3,7 @@ import {
   FixedProductMarketMakerFactory
 } from "generated";
 
-ConditionalTokens.ConditionPreparation.handler(async ({ event, context }) => { });
+import "./ConditionalTokensMapping";
 
 FixedProductMarketMakerFactory.FPMMBuy.handler(async ({ event, context }) => { });
 
